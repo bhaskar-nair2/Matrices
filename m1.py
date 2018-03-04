@@ -1,3 +1,5 @@
+##Just import m1 and use m1.functions to use the functions, a sample is shown in main.py file
+
 ##r=Rows;
 ##c=Cols;
 ##a=Matrix1;
@@ -22,6 +24,7 @@ def in_by_val():
     x=n
     n=[]
     return x
+
 ## Errors
 class Error(Exception):
     pass
@@ -52,7 +55,7 @@ def mat_def(a,b):
     else:
         raise inden_Err
 
-#Actual Multiplication
+#Multiplication
 def even_mul_mat(a,b):
     v=0
     n=[]
@@ -69,7 +72,7 @@ def even_mul_mat(a,b):
         RE.append(n)
         n=[]
     return RE
-def uneven_mat_mul():
+def uneven_mat_mul(a,b):
     v1=0
     v2=0
     n=[]
@@ -89,32 +92,11 @@ def uneven_mat_mul():
         n=[]
     print(RE)
                     
-            
-
-    
-
-a=in_by_val()
-b=in_by_val()
-try:
-    if mat_def(a,b)==1:
-        print(even_mul_mat(a,b))
-    else:
-        uneven_mat_mul()
-except inden_Err:
-    rechk()
-
-
-
-
-
-
-##for i in range(0,r):
-##        for k in range(0,r):#range is not inclusive
-##            for m in range(0,c):
-##                for j in range(0,c):
-##                    v=v+(int(a[i][m])*int(b[j][k]))
-##                n.append(v)
-##                v=0
-##            RE.append(n)
-##            n=[]
-##        print(RE)
+def fin(a,b):
+    try:
+        if mat_def(a,b)==1:
+            print(even_mul_mat(a,b))
+        else:
+            uneven_mat_mul(a,b)
+    except inden_Err:
+        rechk()
